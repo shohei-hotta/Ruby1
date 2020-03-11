@@ -2,32 +2,37 @@
 class Player
   def hand
     # 「プレイヤーに 0 ~ 2を入力させる文章」を表示させます。
-    puts "数字を入力してください。"
+    puts "0~2の数字を入力してください。"
     puts "0:グー, 1:チョキ, 2:パー"
     # 変数「input_hand」に
     # プレイヤーが入力したものを取得して代入します。
     # ヒント! 「getsメソッド」を使用します。
+    input_hand = gets.to_i
     # 「input_hand」(取得した値)が「0, 1, 2」のいずれかだとwhileから脱出させ、それ以外だと初めから繰り返させます。
     # ヒント! 「while文」を使用します。
       # 【条件分岐】「input_hand」(取得した値)が「0, 1, 2」のいずれかの場合だったとき
         # 「input_hand」(取得した値)をそのまま返します。
         # ヒント！ 「return」を使用します。
-      else # 条件外だった場合
-        # 「プレイヤーに 0 ~ 2を入力させる文章」を表示させます。
-        puts "もう一度数字を入力してください。"
-        puts "0:グー, 1:チョキ, 2:パー"
-        # 変数「input_hand」に
-        # プレイヤーが入力したものを取得して代入します。
-      end
+    if input_hand == 0 || input_hand == 1 || input_hand == 2
+      return input_hand
+    else # 条件外だった場合
+          # 「プレイヤーに 0 ~ 2を入力させる文章」を表示させます。
+          # 変数「input_hand」に
+          # プレイヤーが入力したものを取得して代入します。
+      return hand
     end
   end
 end
+
 # 敵が「0 ~ 2」の値をランダムで生成するロジックを書きます。
 class Enemy
   def hand
     # グー、チョキ、パーの値をランダムに出力させます。
   end
 end
+
+
+=begin
 # プレイヤー(自分)が入力した「0 ~ 2」と、敵がランダムで生成した「0 ~ 2」をじゃんけんをさせて、その結果をコンソール上に出力するロジックを書きます。
 class Janken
   def pon(player_hand, enemy_hand)
@@ -65,3 +70,6 @@ while next_game
 # じゃんけんの実行結果に「true」が返ってくると、このwhileを繰り返します。
   next_game = janken.pon(player.hand, enemy.hand)
 end
+
+
+=end
