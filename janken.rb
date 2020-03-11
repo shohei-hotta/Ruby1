@@ -28,9 +28,10 @@ end
 class Enemy
   def hand
     # グー、チョキ、パーの値をランダムに出力させます。
+    enemy_hand = "#{rand(3)}"
+    return enemy_hand
   end
 end
-
 
 =begin
 # プレイヤー(自分)が入力した「0 ~ 2」と、敵がランダムで生成した「0 ~ 2」をじゃんけんをさせて、その結果をコンソール上に出力するロジックを書きます。
